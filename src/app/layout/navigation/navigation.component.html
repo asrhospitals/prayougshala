@@ -1,14 +1,34 @@
 <mat-nav-list>
-    <a mat-list-item routerLink="/home">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
+  <a mat-list-item routerLink="/home">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+
+  <!-- Lab Link -->
+  <mat-list-item (click)="toggleLab()" class="lab-item">
+    <mat-icon>biotech</mat-icon>
+    <span>Lab</span>
+    <mat-icon class="chevron-class">{{ isLabExpanded ? 'expand_more' : 'chevron_right' }}</mat-icon>
+  </mat-list-item>
+
+  <mat-nav-list *ngIf="isLabExpanded" class="nested-list">
+    <a mat-list-item routerLink="/lab/reports">
+      <mat-icon>description</mat-icon>
+      <span>Reports</span>
     </a>
-    <a mat-list-item routerLink="/about">
-      <mat-icon>biotech</mat-icon>
-      <span>Lab</span>
+    <a mat-list-item routerLink="/lab/tests">
+      <mat-icon>science</mat-icon>
+      <span>Tests</span>
     </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>medical_services</mat-icon>
-      <span>Pharma</span>
+    <a mat-list-item routerLink="/lab/settings">
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
     </a>
   </mat-nav-list>
+
+  <!-- Pharma Link -->
+  <a mat-list-item routerLink="/contact">
+    <mat-icon>medical_services</mat-icon>
+    <span>Pharma</span>
+  </a>
+</mat-nav-list>

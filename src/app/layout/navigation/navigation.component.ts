@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  isLabExpanded = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleLab() {
+    this.isLabExpanded = !this.isLabExpanded;
   }
 
 }

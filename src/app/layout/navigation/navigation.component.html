@@ -11,18 +11,32 @@
     <mat-icon class="chevron-class">{{ isLabExpanded ? 'expand_more' : 'chevron_right' }}</mat-icon>
   </mat-list-item>
 
+  
+
   <mat-nav-list *ngIf="isLabExpanded" class="nested-list">
-    <a mat-list-item routerLink="/lab/reports">
-      <mat-icon>description</mat-icon>
-      <span>Reports</span>
-    </a>
-    <a mat-list-item routerLink="/lab/tests">
-      <mat-icon>science</mat-icon>
-      <span>Tests</span>
+    <a mat-list-item routerLink="/lab/settings">
+      <mat-icon>home</mat-icon>
+      <span>Order Dashboard</span>
     </a>
     <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>settings</mat-icon>
-      <span>Settings</span>
+      <mat-icon>today</mat-icon>
+      <span>New Order</span>
+    </a>
+    <a mat-list-item routerLink="/lab/settings">
+      <mat-icon>science</mat-icon>
+      <span>Lab test Sample</span>
+    </a>
+    <a mat-list-item routerLink="/lab/settings">
+      <mat-icon>biotech</mat-icon>
+      <span>Pathology DashBoard</span>
+    </a>
+    <a mat-list-item routerLink="/lab/settings">
+      <mat-icon>personal_injury</mat-icon>
+      <span>Radiology Dashboard</span>
+    </a>
+    <a mat-list-item routerLink="/lab/settings">
+      <mat-icon>description</mat-icon>
+      <span>View Lab Test</span>
     </a>
   </mat-nav-list>
 

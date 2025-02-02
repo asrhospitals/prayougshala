@@ -9,13 +9,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { FeaturesComponent } from './features/features.component';
 import { MainContentComponent } from './layout/main-content/main-content.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
-import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,

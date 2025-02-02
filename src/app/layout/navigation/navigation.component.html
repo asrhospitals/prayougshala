@@ -1,48 +1,26 @@
 <mat-nav-list>
-  <a mat-list-item routerLink="/home">
-    <mat-icon>home</mat-icon>
-    <span>Home</span>
-  </a>
+  <ng-container *ngFor="let item of menuItems">
+    <!-- Single-level menu (only visible items) -->
+    <a *ngIf="item.visible && !item.children" mat-list-item [routerLink]="item.link">
+      <mat-icon>{{ item.icon }}</mat-icon> &nbsp;
+      <span>{{ item.name }}</span>
+    </a>
 
-  <!-- Lab Link -->
-  <mat-list-item (click)="toggleLab()" class="lab-item">
-    <mat-icon>biotech</mat-icon>
-    <span>Lab</span>
-    <mat-icon class="chevron-class">{{ isLabExpanded ? 'expand_more' : 'chevron_right' }}</mat-icon>
-  </mat-list-item>
+    <!-- Multi-level menu (only visible items) -->
+    <mat-list-item *ngIf="item.visible && item.children" (click)="toggleMenu(item.name)">
+      <mat-icon>{{ item.icon }}</mat-icon> &nbsp;
+      <span>{{ item.name }}</span>
+      <mat-icon class="chevron-class">{{ expandedMenus[item.name] ? 'expand_more' : 'chevron_right' }}</mat-icon>
+    </mat-list-item>
 
-  
-
-  <mat-nav-list *ngIf="isLabExpanded" class="nested-list">
-    <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>home</mat-icon>
-      <span>Order Dashboard</span>
-    </a>
-    <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>today</mat-icon>
-      <span>New Order</span>
-    </a>
-    <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>science</mat-icon>
-      <span>Lab test Sample</span>
-    </a>
-    <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>biotech</mat-icon>
-      <span>Pathology DashBoard</span>
-    </a>
-    <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>personal_injury</mat-icon>
-      <span>Radiology Dashboard</span>
-    </a>
-    <a mat-list-item routerLink="/lab/settings">
-      <mat-icon>description</mat-icon>
-      <span>View Lab Test</span>
-    </a>
-  </mat-nav-list>
-
-  <!-- Pharma Link -->
-  <a mat-list-item routerLink="/contact">
-    <mat-icon>medical_services</mat-icon>
-    <span>Pharma</span>
-  </a>
+    <!-- Nested list for children (only visible items) -->
+    <mat-nav-list *ngIf="expandedMenus[item.name]" class="nested-list">
+      <ng-container *ngFor="let child of item.children">
+        <a *ngIf="child.visible" mat-list-item [routerLink]="child.link">
+          <mat-icon>{{ child.icon }}</mat-icon> &nbsp;
+          <span>{{ child.name }}</span>
+        </a>
+      </ng-container>
+    </mat-nav-list>
+  </ng-container>
 </mat-nav-list>

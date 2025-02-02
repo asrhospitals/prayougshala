@@ -1,9 +1,21 @@
 <mat-toolbar color="primary">
     <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
     <span>ASR Hospital Application</span>
-</mat-toolbar>
+  
+    <span class="spacer"></span>
+  
+    <!-- Profile section with dropdown menu -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onForgotPassword()">Forgot Password</button>
+      <button mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+  </mat-toolbar>
+  
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" opened>

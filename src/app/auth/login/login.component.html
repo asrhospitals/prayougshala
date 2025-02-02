@@ -1,0 +1,42 @@
+<div class="login-container">
+    <div class="logo-container">
+        <img src="assets/images/logo.png" alt="Logo" class="logo" />
+        <h2 class="hospital-name">ASR Hospital</h2>
+    </div>
+
+    <div class="login-box">
+        <mat-card class="login-card">
+            <mat-card-content>
+                <!-- Center the vector image -->
+                <img src="assets/images/user.svg" alt="User Vector" class="user-vector">
+
+                <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" required />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password"
+                            required />
+                        <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary" type="submit">Login</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+
+        <div class="additional-options">
+            <button mat-button>
+                <mat-icon>lock</mat-icon> Forgot Password?
+            </button>
+            <button mat-button>
+                <mat-icon>person_add</mat-icon> Sign Up
+            </button>
+        </div>
+    </div>
+</div>

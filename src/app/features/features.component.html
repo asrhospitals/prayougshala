@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>ASR Hospital Application</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <app-navigation></app-navigation>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-toolbar></app-toolbar>
+        <app-main-content></app-main-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

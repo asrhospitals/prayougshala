@@ -22,6 +22,11 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.menuItems.forEach(item => {
+      if (item.children) {
+        this.expandedMenus[item.name] = true; 
+      }
+    });
   }
 
   toggleMenu(name: string): void {

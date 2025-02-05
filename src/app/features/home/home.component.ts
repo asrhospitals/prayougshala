@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  userData: any;
+  loggedInUserName: string = "Dr. Narayana Reddy";
+  hour = new Date().getHours();
+  greeting = "Good Morning";
+  currentTime: string = "";
+  constructor(
+  ) { }
 
   ngOnInit(): void {
+    this.greeting = "Good " + (this.hour < 12 && "Morning" || this.hour < 15 && "Afternoon" || "Evening");
   }
 
 }

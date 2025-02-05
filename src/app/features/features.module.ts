@@ -18,6 +18,7 @@ import { FeaturesComponent } from './features.component';
 import { HomeComponent } from './home/home.component';
 import { LabModule } from './lab/lab.module';
 import { SetupsComponent } from './setups/setups.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { SetupsComponent } from './setups/setups.component';
         MatIconModule,
         MatButtonModule,
         MatMenuModule,
+        MatCardModule,
         ReactiveFormsModule,
         HttpClientModule,
         ToastrModule.forRoot(),

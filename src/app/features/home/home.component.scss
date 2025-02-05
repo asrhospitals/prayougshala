@@ -1,0 +1,60 @@
+.first_card {
+    .box {
+        margin-bottom: 25px;
+        border-radius: 5px;
+        background: #fff;
+        overflow: hidden;
+        box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.16);
+    }
+
+    .box--primary {
+        background: linear-gradient(to right, #194A82, #87b9f3);
+        color: #fff;
+    }
+
+    .helper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    @media (max-width: 767px) {
+        .helper {
+            flex-wrap: wrap;
+        }
+    }
+
+    .helper__content {
+        padding: 25px;
+    }
+
+    .helper__content h1 b {
+        color: rgb(244, 140, 140);
+    }
+
+    .helper__content h5 {
+        font-size: 1.2rem;
+    }
+
+    @media (min-width: 768px) {
+        .helper__content {
+            margin-right: 225px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .helper__content {
+            margin-bottom: 155px;
+        }
+    }
+
+    .helper__img img {
+        width: 250px;
+        max-height: 200px;
+        object-fit: cover;
+        position: relative;
+        right: 0;
+        bottom: 0;
+    }
+}

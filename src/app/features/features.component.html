@@ -5,10 +5,13 @@
   <span class="title">ASR Hospital Application</span>
 
   <span class="spacer"></span>
-
+  <div class="current-time">
+    <span>{{ currentTime }}</span>
+  </div>&nbsp; |
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>account_circle</mat-icon>
-  </button>
+  </button> 
+  {{userName}}
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="onForgotPassword()">Reset Password</button>
     <button mat-menu-item (click)="onLogout()">Logout</button>
@@ -24,3 +27,13 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<footer [ngClass]="{'footer-expanded': isSidenavOpened, 'footer-collapsed': !isSidenavOpened}">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <span><b>© 2025 ASR Hospital</b></span>
+    <div>
+      <a href="/privacy-policy" style="text-decoration: none; margin-right: 15px;"><b>Privacy Policy</b></a>
+      <a href="/terms-conditions" style="text-decoration: none;"><b>Terms & Conditions</b></a>
+    </div>
+  </div>
+</footer>

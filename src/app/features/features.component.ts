@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,10 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
+  @ViewChild('sidenav')
+  sidenav!: MatSidenav;
+  isSidenavOpened = false;
+  userName: string = "Narayana Reddy";
+  currentTime: string = "";
 
-  constructor(private router : Router) { }
-
+  constructor(private router: Router) { }
+  ngAfterViewInit() {
+    this.sidenav.openedChange.subscribe((opened) => {
+      this.isSidenavOpened = opened;
+    });
+  }
   ngOnInit(): void {
+    setInterval(() => {
+      const currentDate = new Date();
+      this.currentTime = currentDate.toLocaleTimeString();
+    }, 1000);
   }
   onForgotPassword() {
     console.log('Forgot Password clicked');

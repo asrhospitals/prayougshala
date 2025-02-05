@@ -1,0 +1,61 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  // 4 cards per row
+    gap: 20px;  // 20px gap between cards
+    padding: 20px;
+    
+    .card-item {
+      display: flex;
+      justify-content: center;
+      .card {
+        width: 220px;  // Fixed width for each card
+        height: 220px;  // Fixed height for each card
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+  
+        mat-card-header {
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.3rem;
+          padding-top: 10px;
+        }
+  
+        .icon {
+          font-size: 3rem;
+          margin-bottom: 10px;
+          color: #1976d2;  // Adjust the icon color to your preference
+        }
+  
+        mat-card-actions {
+          margin-top: 10px;
+          a {
+            text-decoration: none;
+            color: #1976d2;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  
+    // Adjusting for the 6th card on the next row (2 per row)
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr); // 2 cards per row on medium screens
+    }
+  
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // 1 card per row on small screens
+    }
+  }
+  
+  // Specific class for 6th card
+  .card-container .card-item:nth-child(5),
+  .card-container .card-item:nth-child(6) {
+    margin-top: 30px;  // Space between the first 4 cards and the last 2
+  }
+  

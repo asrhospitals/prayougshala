@@ -19,7 +19,8 @@ mat-toolbar {
 /* Sidenav styling */
 .sidenav-container {
   display: flex;
-  height: 100vh;
+  height: 100vh; /* Full height of the viewport */
+  flex-direction: column; /* Make it a column layout */
 }
 
 .sidenav {
@@ -32,6 +33,7 @@ mat-toolbar {
   flex: 1;
   padding: 16px;
   background-color: #f4f4f4;
+  overflow-y: auto; /* Allow scrolling for the content */
 }
 
 /* Profile menu styling */
@@ -42,6 +44,42 @@ mat-menu {
 button[mat-menu-item] {
   width: 100%;
 }
+
+/* Footer Styling */
+footer {
+  background-color: white;
+  color: rgb(77, 73, 73);
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: relative; /* Ensures it stays within the content */
+  bottom: 0;
+}
+
+/* Footer when sidenav is expanded */
+.footer-expanded {
+  width: calc(100% - 250px); /* Reduced by the sidenav width */
+  margin-left: 250px; /* Offset the footer to align with content */
+}
+
+/* Footer when sidenav is collapsed */
+.footer-collapsed {
+  width: 100%;
+  margin-left: 0;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: rgb(77, 73, 73);
+  text-decoration: none;
+  margin-left: 15px;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -71,3 +109,23 @@ button[mat-menu-item] {
     width: 180px;
   }
 }
+
+.current-time {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.current-time::before {
+  content: "\1F550"; /* Clock icon */
+  margin-right: 5px;
+}
+
+
+
+

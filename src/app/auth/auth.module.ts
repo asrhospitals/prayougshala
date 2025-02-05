@@ -6,13 +6,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [LoginComponent],
     imports: [
-        CommonModule,
+        CommonModule,  // ✅ Correct import
         FormsModule,
         ReactiveFormsModule,
         AuthRoutingModule,

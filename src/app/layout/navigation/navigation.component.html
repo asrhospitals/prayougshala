@@ -1,26 +1,26 @@
 <mat-nav-list>
   <ng-container *ngFor="let item of menuItems">
-    <!-- Single-level menu (only visible items) -->
-    <a *ngIf="item.visible && !item.children" mat-list-item [routerLink]="item.link">
+    <a *ngIf="item.visible && !item.children" mat-list-item [routerLink]="item.link" routerLinkActive="active-link">
       <mat-icon>{{ item.icon }}</mat-icon> &nbsp;
       <span>{{ item.name }}</span>
     </a>
 
-    <!-- Multi-level menu (only visible items) -->
+    <!-- For multi-level menu -->
     <mat-list-item *ngIf="item.visible && item.children" (click)="toggleMenu(item.name)">
       <mat-icon>{{ item.icon }}</mat-icon> &nbsp;
       <span>{{ item.name }}</span>
       <mat-icon class="chevron-class">{{ expandedMenus[item.name] ? 'expand_more' : 'chevron_right' }}</mat-icon>
     </mat-list-item>
 
-    <!-- Nested list for children (only visible items) -->
+    <!-- Nested items -->
     <mat-nav-list *ngIf="expandedMenus[item.name]" class="nested-list">
       <ng-container *ngFor="let child of item.children">
-        <a *ngIf="child.visible" mat-list-item [routerLink]="child.link">
+        <a *ngIf="child.visible" mat-list-item [routerLink]="child.link" routerLinkActive="active-link">
           <mat-icon>{{ child.icon }}</mat-icon> &nbsp;
           <span>{{ child.name }}</span>
         </a>
       </ng-container>
     </mat-nav-list>
+
   </ng-container>
 </mat-nav-list>

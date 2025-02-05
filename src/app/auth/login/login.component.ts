@@ -26,7 +26,7 @@ export class LoginComponent {
       if (username === 'admin' && password === 'admin') {
         console.log('Login Successful:', username);
         this.toastr.success('Login Successful!', 'Success');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/app/home']);
       } else {
         this.toastr.error('Invalid username or password', 'Login Failed');
       }

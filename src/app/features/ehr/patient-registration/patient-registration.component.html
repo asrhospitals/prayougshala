@@ -1,16 +1,14 @@
-<div style="display: block;">
-    <h2 style="float: left; margin-top: 6px;">Patient Registration</h2>
+<div class="patient-header">
+    <h2>Patient Registration</h2>
 </div>
 
-<div style="margin-top: 50px;">
+<div>
     <form>
         <mat-card>
             <div class="container">
-                <!-- Row 1 -->
                 <div class="row">
-                    <!-- Title -->
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
+                    <div class="col-md-3 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Title</mat-label>
                             <mat-select placeholder="Title" required>
                                 <mat-option value="Mr">Mr</mat-option>
@@ -21,108 +19,88 @@
                         </mat-form-field>
                     </div>
 
-                    <!-- First Name -->
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
+                    <div class="col-md-3 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
                             <mat-label>First Name</mat-label>
                             <input matInput type="text" placeholder="First Name" required>
                             <mat-error>First Name Cannot be empty</mat-error>
                         </mat-form-field>
                     </div>
 
-                    <!-- Middle Name -->
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
+                    <div class="col-md-3 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Middle Name</mat-label>
                             <input matInput type="text" placeholder="Middle Name">
                         </mat-form-field>
                     </div>
 
-                    <!-- Last Name -->
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
+                    <div class="col-md-3 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Last Name</mat-label>
                             <input matInput type="text" placeholder="Last Name">
                         </mat-form-field>
                     </div>
                 </div>
 
-                <!-- Row 2 -->
                 <div class="row">
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
-                            <mat-label>Gender</mat-label>
-                            <mat-select placeholder="Gender" required>
-                                <mat-option value="Male">Male</mat-option>
-                                <mat-option value="Female">Female</mat-option>
-                            </mat-select>
-                            <mat-error>Gender cannot be empty!</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <!-- Primary Mobile Number -->
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
-                            <mat-label>Primary Mobile Number</mat-label>
-                            <input matInput minlength="10" maxlength="10" type="text"
-                                placeholder="Primary Mobile Number" required>
-                            <mat-error>Primary Mobile Number cannot be empty (or) less than 10 characters</mat-error>
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field appearance="outline" class="col-sm-3">
+                        <mat-label>Gender</mat-label>
+                        <mat-select placeholder="Gender" required>
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                        </mat-select>
+                        <mat-error>Gender cannot be empty!</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="col-sm-3">
+                        <mat-label>Primary Mobile Number</mat-label>
+                        <input matInput minlength="10" maxlength="10" type="text" placeholder="Primary Mobile Number"
+                            required>
+                        <mat-error>Primary Mobile Number cannot be empty (or) less than 10 characters</mat-error>
+                    </mat-form-field>
 
-                    <!-- Age -->
-                    <div class="col-md-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
-                            <mat-label>Age (In Years)</mat-label>
-                            <input matInput placeholder="Age (In Years)">
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field appearance="outline" class="col-sm-3">
+                        <mat-label>Age (In Years)</mat-label>
+                        <input matInput placeholder="Age (In Years)">
+                    </mat-form-field>
 
-                    <!-- Date of Birth -->
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" class="col">
-                            <mat-label> Date Of Birth </mat-label>
-                            <input matInput maxlength="10" placeholder="DD/MM/YYYY" [matDatepicker]="dob" required>
-                            <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
-                            <mat-datepicker #dob></mat-datepicker>
-                            <mat-error>
-                                Please pick a valid Date of birth
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field appearance="outline" class="col-sm-3">
+                        <mat-label> Date Of Birth </mat-label>
+                        <input matInput maxlength="10" placeholder="DD/MM/YYYY" [matDatepicker]="dob" required>
+                        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                        <mat-datepicker #dob></mat-datepicker>
+                        <mat-error>
+                            Please pick a valid Date of birth
+                        </mat-error>
+                    </mat-form-field>
                 </div>
 
-                <!-- Row 3 -->
                 <div class="row">
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
-                            <mat-label>Occupation</mat-label>
-                            <input matInput type="text" placeholder="Occupation">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-sm-3">
-                        <mat-form-field appearance="outline" style="width: 100%;">
-                            <mat-label>Blood Group</mat-label>
-                            <mat-select placeholder="Blood Group">
-                                <mat-option value="A+">A+</mat-option>
-                                <mat-option value="A-">A-</mat-option>
-                                <mat-option value="B+">B+</mat-option>
-                                <mat-option value="B-">B-</mat-option>
-                                <mat-option value="AB+">AB+</mat-option>
-                                <mat-option value="AB-">AB-</mat-option>
-                                <mat-option value="O+">O+</mat-option>
-                                <mat-option value="O-">O-</mat-option>
-                                <mat-option value="RH+">RH+</mat-option>
-                                <mat-option value="RH-">RH-</mat-option>
-                            </mat-select>
-                            <mat-error>Blood Group cannot be empty!</mat-error>
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field appearance="outline" class="col-sm-3">
+                        <mat-label>Occupation</mat-label>
+                        <input matInput type="text" placeholder="Occupation">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="col-sm-3">
+                        <mat-label>Blood Group</mat-label>
+                        <mat-select placeholder="Blood Group">
+                            <mat-option value="A+">A+</mat-option>
+                            <mat-option value="A-">A-</mat-option>
+                            <mat-option value="B+">B+</mat-option>
+                            <mat-option value="B-">B-</mat-option>
+                            <mat-option value="AB+">AB+</mat-option>
+                            <mat-option value="AB-">AB-</mat-option>
+                            <mat-option value="O+">O+</mat-option>
+                            <mat-option value="O-">O-</mat-option>
+                            <mat-option value="RH+">RH+</mat-option>
+                            <mat-option value="RH-">RH-</mat-option>
+                        </mat-select>
+                        <mat-error>Blood Group cannot be empty!</mat-error>
+                    </mat-form-field>
                 </div>
 
             </div>
         </mat-card>
     </form>
-    <div style="margin-top: 8px">
+    <div style="margin-top: 15px">
         <mat-accordion class="example-headers-align" multi>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
@@ -134,18 +112,18 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-6 col-12">
                             <input type="text" hidden="true">
-                            <mat-form-field appearance="outline" class="col">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Secondary Mobile Number </mat-label>
                                 <input matInput minlength="10" maxlength="10" type="text"
                                     placeholder="Secondary Mobile Number">
                                 <mat-error> Secondary Mobile Number cannot be less than 10 characters </mat-error>
                             </mat-form-field>
                         </div>
-                        <div class="col">
+                        <div class="col-md-6 col-12">
                             <input type="text" hidden="true">
-                            <mat-form-field appearance="outline" class="col">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Email </mat-label>
                                 <input matInput type="text" placeholder="Email">
                                 <mat-error> Email cannot be null! </mat-error>
@@ -153,11 +131,12 @@
                         </div>
                     </div>
 
+
                     <div> Primary Address: </div>
                     <input type="text" hidden="true">
                     <div class="row" style="margin-top: 10px;">
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label>Search for Area, Region, Postal Office & Pincode</mat-label>
                                 <input matInput placeholder="Search for Area, Region, Postal Office & Pincode...">
                                 <mat-autocomplete>
@@ -169,8 +148,8 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Address Line 1 </mat-label>
                                 <input matInput type="text" placeholder="Address Line 1">
                                 <mat-error> Address Line 1 Cannot be null! </mat-error>
@@ -179,15 +158,15 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-6 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Address Line 2 </mat-label>
                                 <input matInput type="text" placeholder="Address Line 2">
                                 <mat-error> Address Line 2 Cannot be null! </mat-error>
                             </mat-form-field>
                         </div>
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-6 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Address Line 3 </mat-label>
                                 <input matInput type="text" placeholder="Address Line 3">
                                 <mat-error> Address Line 3 Cannot be null! </mat-error>
@@ -196,16 +175,15 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-4 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> City </mat-label>
                                 <input matInput type="text" placeholder="City">
                                 <mat-error> City Cannot be null! </mat-error>
                             </mat-form-field>
                         </div>
-
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-4 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> District </mat-label>
                                 <mat-select>
                                     <mat-option> Example District </mat-option>
@@ -213,9 +191,8 @@
                                 <mat-error> SubDivision 1 or District Name cannot be empty! </mat-error>
                             </mat-form-field>
                         </div>
-
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-4 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> State </mat-label>
                                 <mat-select>
                                     <mat-option> Example State </mat-option>
@@ -226,8 +203,8 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-6 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Country </mat-label>
                                 <mat-select>
                                     <mat-option value="IN"> India </mat-option>
@@ -235,9 +212,8 @@
                                 <mat-error> Country type cannot be null! </mat-error>
                             </mat-form-field>
                         </div>
-
-                        <div class="col">
-                            <mat-form-field appearance="outline" class="col">
+                        <div class="col-md-4 col-12">
+                            <mat-form-field appearance="outline" class="w-100">
                                 <mat-label> Postal Code </mat-label>
                                 <input matInput minlength="6" maxlength="6" placeholder="Postal Code">
                                 <mat-error> Postal Code cannot be empty or less than 6 characters! </mat-error>
@@ -250,34 +226,36 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <mat-checkbox color="primary"> Same as Primary Address </mat-checkbox>
+                                    <mat-checkbox [checked]="secondaryAddressChecked"
+                                        (change)="OnSameAsPrimarySelectionChange($event)" color="primary"> Same as
+                                        Primary Address </mat-checkbox>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div>
+                    <div *ngIf="!secondaryAddressChecked">
                         <input type="text" hidden="true">
                         <div class="row">
-                            <div class="col">
-                                <mat-form-field appearance="outline" class="col">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <mat-form-field appearance="outline" class="w-100">
                                     <mat-label> Address Line 1 </mat-label>
                                     <input matInput type="text" placeholder="Address Line 1">
-                                    <mat-error> Address Line 1 Cannot be empty! </mat-error>
+                                    <mat-error> Address Line 1 Cannot be null! </mat-error>
                                 </mat-form-field>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <mat-form-field appearance="outline" class="col">
+                            <div class="col-md-6 col-12">
+                                <mat-form-field appearance="outline" class="w-100">
                                     <mat-label> Address Line 2 </mat-label>
                                     <input matInput type="text" placeholder="Address Line 2">
                                     <mat-error> Address Line 2 Cannot be null! </mat-error>
                                 </mat-form-field>
                             </div>
-                            <div class="col">
-                                <mat-form-field appearance="outline" class="col">
+                            <div class="col-md-6 col-12">
+                                <mat-form-field appearance="outline" class="w-100">
                                     <mat-label> Address Line 3 </mat-label>
                                     <input matInput type="text" placeholder="Address Line 3">
                                     <mat-error> Address Line 3 Cannot be null! </mat-error>
@@ -286,16 +264,15 @@
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <mat-form-field appearance="outline" class="col">
+                            <div class="col-md-4 col-12">
+                                <mat-form-field appearance="outline" class="w-100">
                                     <mat-label> City </mat-label>
                                     <input matInput type="text" placeholder="City">
                                     <mat-error> City Cannot be null! </mat-error>
                                 </mat-form-field>
                             </div>
-
-                            <div class="col">
-                                <mat-form-field appearance="outline" class="col">
+                            <div class="col-md-4 col-12">
+                                <mat-form-field appearance="outline" class="w-100">
                                     <mat-label> District </mat-label>
                                     <mat-select>
                                         <mat-option> Example District </mat-option>
@@ -303,9 +280,8 @@
                                     <mat-error> SubDivision 1 or District Name cannot be empty! </mat-error>
                                 </mat-form-field>
                             </div>
-
-                            <div class="col">
-                                <mat-form-field appearance="outline" class="col">
+                            <div class="col-md-4 col-12">
+                                <mat-form-field appearance="outline" class="w-100">
                                     <mat-label> State </mat-label>
                                     <mat-select>
                                         <mat-option> Example State </mat-option>
@@ -320,7 +296,6 @@
         </mat-accordion>
     </div>
     <div class="row">
-        <!-- Buttons -->
         <div class="col-sm-12" style="padding-top: 20px; display: flex; justify-content: space-between;">
             <button mat-raised-button style="margin-right: 12px;" color="#fff" type="button">Cancel</button>
             <button mat-raised-button style="margin-right: 12px;" color="primary" type="button"

@@ -1,6 +1,8 @@
-.container {
-    // display: flex;
-    align-items: center;
-    // justify-content: center;
-    padding-right: 50px;
+.patient-header {
+    display: flex;
+}
+
+.patient-header h2 {
+    float: left;
+    padding-left: 13px;
 }

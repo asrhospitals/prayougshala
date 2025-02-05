@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class PatientRegistrationComponent implements OnInit {
 
+  secondaryAddressChecked: boolean = true;
+
   constructor(
     // private router: Router,
     // private fb: FormBuilder,
@@ -16,6 +18,10 @@ export class PatientRegistrationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  OnSameAsPrimarySelectionChange(event: any) {
+    this.secondaryAddressChecked = !this.secondaryAddressChecked;
   }
 
 }

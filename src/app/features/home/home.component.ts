@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   userData: any;
-  loggedInUserName: string = "Dr. Narayana Reddy";
+  loggedInUserName: string = "Dr. Admin";
   hour = new Date().getHours();
   greeting = "Good Morning";
   currentTime: string = "";

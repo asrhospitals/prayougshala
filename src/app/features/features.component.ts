@@ -11,7 +11,7 @@ export class FeaturesComponent implements OnInit {
   @ViewChild('sidenav')
   sidenav!: MatSidenav;
   isSidenavOpened = false;
-  userName: string = "Narayana Reddy";
+  userName: string = "Admin";
   currentTime: string = "";
 
   constructor(private router: Router) { }

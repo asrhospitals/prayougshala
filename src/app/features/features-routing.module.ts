@@ -6,7 +6,7 @@ import { SetupsComponent } from './setups/setups.component';
 
 const routes: Routes = [
   {
-    path: 'app', component: FeaturesComponent,
+    path: '', component: FeaturesComponent,
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'ehr', loadChildren: () => import('./ehr/ehr.module').then(m => m.EhrModule) },

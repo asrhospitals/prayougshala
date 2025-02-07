@@ -2,40 +2,45 @@ let SETUP_ITEMS = [
     {
         "name": "Organization",
         "link": "/app/setup/organization",
-        "icon": "business",  // Changed to 'business' to represent an organization
-        "visible": true
+        "icon": "business",
+        "visible": true,
+        "key": "organization"
     },
     {
         "name": "Department",
         "link": "/app/setup/department",
-        "icon": "group_work",  // 'group_work' is suitable for departments or teams
-        "visible": true
+        "icon": "group_work",
+        "visible": true,
+        "key": "department"
     },
     {
         "name": "Doctor",
         "link": "/app/setup/doctor",
-        "icon": "local_hospital",  // 'local_hospital' represents healthcare or doctor-related content
-        "visible": true
+        "icon": "local_hospital",
+        "visible": true,
+        "key": "doctor"
     },
     {
         "name": "Employee",
         "link": "/app/setup/employee",
-        "icon": "people",  // 'people' is perfect for representing employees
-        "visible": true
+        "icon": "people",
+        "visible": true,
+        "key": "employee"
     },
     {
         "name": "Lab",
         "link": "/app/setup/lab",
-        "icon": "science",  // 'science' represents laboratories and scientific work
-        "visible": true
+        "icon": "science",
+        "visible": true,
+        "key": "lab"
     },
     {
         "name": "Package",
         "link": "/app/setup/package",
-        "icon": "file",  // 'package' icon is most relevant for package-related content
-        "visible": true
+        "icon": "file",
+        "visible": true,
+        "key": "package"
     }
 ];
 
-// Export for Angular usage
 export default SETUP_ITEMS;

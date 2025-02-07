@@ -10,12 +10,17 @@
   </div>&nbsp; |
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>account_circle</mat-icon>
-  </button> 
-  {{userName}}
+  </button>
+  <span [matMenuTriggerFor]="menu" class="username">{{ userName }}</span>
+
+
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="onForgotPassword()">Reset Password</button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Settings</button>
     <button mat-menu-item (click)="onLogout()">Logout</button>
   </mat-menu>
+
+
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">

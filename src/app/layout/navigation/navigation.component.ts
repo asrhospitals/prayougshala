@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ROLE_CONFIG } from 'src/app/auth/auth.util';
 import MENU_ITEMS from 'src/app/menu';
-
-interface MenuItem {
-  name: string;
-  link?: string;
-  icon: string;
-  visible: boolean;
-  children?: MenuItem[];
-}
 
 @Component({
   selector: 'app-navigation',
@@ -16,15 +9,18 @@ interface MenuItem {
 })
 
 export class NavigationComponent implements OnInit {
-  menuItems: MenuItem[] = MENU_ITEMS;
+  menuItems: any[] = [];
   expandedMenus: { [key: string]: boolean } = {};
 
   constructor() { }
 
   ngOnInit(): void {
+    const userRole = localStorage.getItem('userRole');
+    this.menuItems = this.getFilteredMenu(userRole);
+
     this.menuItems.forEach(item => {
       if (item.children) {
-        this.expandedMenus[item.name] = true; 
+        this.expandedMenus[item.name] = true;
       }
     });
   }
@@ -33,5 +29,19 @@ export class NavigationComponent implements OnInit {
     this.expandedMenus[name] = !this.expandedMenus[name];
   }
 
-}
+  getFilteredMenu(role: string | null): any[] {
+    if (!role) return [];
 
+    return MENU_ITEMS
+  .filter(item => ROLE_CONFIG[role]?.includes(item.key))
+  .map(item => {
+    const filteredChildren = item.children?.filter(child => ROLE_CONFIG[role]?.includes(child.key));
+
+    return {
+      ...item,
+      ...(filteredChildren?.length ? { children: filteredChildren } : {}) // Only include children if they exist
+    };
+  });
+
+  }
+}
